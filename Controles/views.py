@@ -166,8 +166,6 @@ def devolucao(request, id_veiculo, id_aluguel):
     aluguel.qtd_dias = dias
     aluguel.valor_total_aluguel = valor_total
 
-    #erro : Não ta salvando!
-
     form = DevolucaoForm(instance=aluguel)
     if request.method == 'POST':
         form = DevolucaoForm(request.POST, instance=aluguel)
