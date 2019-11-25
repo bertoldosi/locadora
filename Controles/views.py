@@ -144,13 +144,24 @@ def devolucao(request, id_veiculo, id_aluguel):
     carro = Veiculo.objects.get(id=id_veiculo)
     carro.status_aluguel = '0'
 
-    taxa = aluguel.veiculo.valor_diaria
+    taxa = 50
 
+    #operação para calcular os dias alugados
     aluguel.dt_devolucao = date.today()
-
     dias = (aluguel.dt_devolucao-aluguel.dt_aluguel).days
+    multa = (aluguel.dt_aluguel-aluguel.dt_devolucao).days
 
-    valor_total = (dias*aluguel.valor_aluguel)+taxa
+    #teste para saber se existe multa na entrega
+    if multa <0:
+        #transformando o numero de atrasos em positivo para realizar a operação.
+        multa = multa*(-1)
+        taxa = taxa*multa
+
+        valor_total = (dias*aluguel.valor_aluguel)+taxa
+        status_multa = taxa
+    else:
+        valor_total = (dias*aluguel.valor_aluguel)
+        status_multa = 0
 
     aluguel.qtd_dias = dias
     aluguel.valor_total_aluguel = valor_total
