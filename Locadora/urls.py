@@ -20,8 +20,8 @@ from Controles.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', index, name='index'),
-    path('login', logar_usuario, name="login"),
+    path('index', index, name='index'),
+    path('', logar_usuario, name="login"),
 
     path('cadastrar_cliente', cadastrar_cliente, name='cadastrar_cliente'),
     path('cadastrar_veiculo', cadastrar_veiculo, name='cadastrar_veiculo'),
