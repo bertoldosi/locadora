@@ -13,42 +13,42 @@
               <div class="form-row">
                 {% csrf_token %}
                 <div class="form-group col-md-6">
-                  <label for="nome">Nome:</label>
-                  <input name="nome" type="text" onkeyup="this.value=this.value.toUpperCase();" class="form-control" id="nome" placeholder="Nome">
+                  <span class="required">*</span><label for="nome">Nome:</label>
+                  <input name="nome" type="text" onkeyup="this.value=this.value.toUpperCase();" class="form-control" id="nome" placeholder="Nome" required="required">
                 </div>
 
                 <div class="form-group col-md-6">
-                  <label for="inputPassword4">Sobrenome:</label>
-                  <input name="sobrenome" type="text" onkeyup="this.value=this.value.toUpperCase();" class="form-control" id="inputPassword4" placeholder="Sobrenome">
+                  <span class="required">*</span><label for="inputPassword4">Sobrenome:</label>
+                  <input name="sobrenome" type="text" onkeyup="this.value=this.value.toUpperCase();" class="form-control" id="inputPassword4" placeholder="Sobrenome" required="required">
                 </div>
               </div>
 
               <div class="form-row">
 
                 <div class="form-group col-md-8">
-                  <label for="email">Email:</label>
-                  <input name="email" type="email" class="form-control" id="email" placeholder="Email">
+                  <span class="required">*</span><label for="email">Email:</label>
+                  <input name="email" type="email" class="form-control" id="email" placeholder="Email" required="required">
                 </div>
 
                 <div class="form-group col-md-4">
-                  <label for="telefone">Telefone:</label>
-                  <input name="telefone" type="text" class="form-control cel-sp-mask" id="telefone" placeholder="Ex.: (00) 0000-0000">
+                  <span class="required">*</span><label for="telefone">Telefone:</label>
+                  <input name="telefone" type="text" class="form-control cel-sp-mask" id="telefone" placeholder="Ex.: (00) 0000-0000" required="required">
                 </div>
               </div>
 
               <div class="form-row">
 
                 <div class="form-group col-md-6 " >
-                  <label for="CPF">CPF:</label>
-                  <input name="cpf" type="text" class="form-control cpf-mask" id="CPF" placeholder="Ex.: 000.000.000-00">
+                  <span class="required">*</span><label for="CPF">CPF:</label>
+                  <input name="cpf" type="text" class="form-control cpf-mask" id="CPF" placeholder="Ex.: 000.000.000-00" required="required">
                 </div>
 
-                <div class="form-group col-md-5">
-                  <label for="rg">RG:</label>
-                  <input name="rg" type="text" class="form-control rg-mask" id="rg" placeholder="Ex.: 00.000.000-0">
+                <div class="form-group col-md-4">
+                  <span class="required">*</span><label for="rg">RG:</label>
+                  <input name="rg" type="text" class="form-control rg-mask" id="rg" placeholder="Ex.: 00.000.000-0" required="required">
                 </div>
-                <div class="form-group col-md-1">
-                      <label for="inputEstado">Estado:</label>
+                <div class="form-group col-md-2">
+                      <span class="required">*</span><label for="inputEstado">Estado:</label>
                       <select name="estado_rg" id="inputEstado"  class="form-control">
                         <option selected>...</option>
                         <option>AC</option>
@@ -82,13 +82,13 @@
               <div class="form-row">
 
                 <div class="form-group col-md-10">
-                  <label for="inputEmail4">Endereço:</label>
-                  <input name="rua" type="text" onkeyup="this.value=this.value.toUpperCase();" class="form-control" id="inputEmail4" placeholder="Endereço">
+                  <span class="required">*</span><label for="inputEmail4">Endereço:</label>
+                  <input name="rua" type="text" onkeyup="this.value=this.value.toUpperCase();" class="form-control" id="inputEmail4" placeholder="Endereço"  required="required">
                 </div>
 
                 <div class="form-group col-md-2">
-                  <label for="inputPassword4">Nº:</label>
-                  <input name="numero" type="number" onkeyup="this.value=this.value.toUpperCase();" class="form-control" id="inputPassword4" placeholder="Número">
+                  <span class="required">*</span><label for="inputPassword4">Nº:</label>
+                  <input name="numero" type="number" onkeyup="this.value=this.value.toUpperCase();" class="form-control" id="inputPassword4" placeholder="Número" required="required">
                 </div>
               </div>
 
@@ -96,10 +96,10 @@
               <div class="form-row">
                 <div class="form-group col-md-6">
 
-                  <label for="inputCity">Cidade:</label>
-                  <input name="cidade" type="text" onkeyup="this.value=this.value.toUpperCase();" class="form-control" id="inputCity" placeholder="Cidade"></div>
+                  <span class="required">*</span><label for="inputCity">Cidade:</label>
+                  <input name="cidade" type="text" onkeyup="this.value=this.value.toUpperCase();" class="form-control" id="inputCity" placeholder="Cidade" required="required"></div>
                   <div class="form-group col-md-4">
-                      <label for="inputEstado">Estado:</label>
+                      <span class="required">*</span><label for="inputEstado">Estado:</label>
                       <select name="estado" id="inputEstado" class="form-control">
                         <option selected>Escolher...</option>
                         <option>AC</option>
@@ -129,8 +129,8 @@
                       </select>
                   </div>
                 <div class="form-group col-md-2">
-                  <label for="cep">CEP:</label>
-                  <input name="cep" type="text" class="form-control cep-mask" id="cep" placeholder="Ex.: 00000-000">
+                  <span class="required">*</span><label for="cep">CEP:</label>
+                  <input name="cep" type="text" class="form-control cep-mask" id="cep" placeholder="Ex.: 00000-000" required="required">
                 </div>
               </div>
 

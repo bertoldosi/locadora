@@ -13,68 +13,68 @@
            {% csrf_token %}
               <div class="form-row">
                 <div class="form-group col-md-6">
-                  <label for="nome">Nome:</label>
-                  <input name="nome" type="text" onkeyup="this.value=this.value.toUpperCase();" class="form-control" id="nome" value="{{ cliente.nome }}">
+                  <span class="required">*</span><label for="nome">Nome:</label>
+                  <input name="nome" type="text" onkeyup="this.value=this.value.toUpperCase();" class="form-control" id="nome" value="{{ cliente.nome }}" required="required">
                 </div>
 
                 <div class="form-group col-md-6">
-                  <label for="sobrenome">Sobrenome:</label>
-                  <input name="sobrenome" type="text" onkeyup="this.value=this.value.toUpperCase();" class="form-control" id="sobrenome" value="{{ cliente.sobrenome }}">
+                  <span class="required">*</span><label for="sobrenome">Sobrenome:</label>
+                  <input name="sobrenome" type="text" onkeyup="this.value=this.value.toUpperCase();" class="form-control" id="sobrenome" value="{{ cliente.sobrenome }}" required="required">
                 </div>
               </div>
 
 
               <div class="form-row">
                 <div class="form-group col-md-8">
-                  <label for="email">Email:</label>
-                  <input name="email" type="email" class="form-control" id="email" value="{{ cliente.email }}">
+                  <span class="required">*</span><label for="email">Email:</label>
+                  <input name="email" type="email" class="form-control" id="email" value="{{ cliente.email }}" required="required">
                 </div>
                 <div class="form-group col-md-4">
-                  <label for="telefone">Telefone:</label>
-                  <input name="telefone" type="text" class="form-control cel-sp-mask" id="telefone" value="{{ cliente.telefone }}">
+                  <span class="required">*</span><label for="telefone">Telefone:</label>
+                  <input name="telefone" type="text" class="form-control cel-sp-mask" id="telefone" value="{{ cliente.telefone }}" required="required">
                 </div>
 
               </div>
               <div class="form-row">
                 <div class="form-group col-md-6">
-                  <label for="cpf">CPF:</label>
-                  <input name="cpf" type="text"  class="form-control cpf-mask" id="cpf" value="{{ cliente.cpf }}">
+                  <span class="required">*</span><label for="cpf">CPF:</label>
+                  <input name="cpf" type="text"  class="form-control cpf-mask" id="cpf" value="{{ cliente.cpf }}" required="required">
                 </div>
                 <div class="form-group col-md-5">
-                  <label for="rg">RG:</label>
-                  <input name="rg" type="text" class="form-control rg-mask" id="rg" value="{{ cliente.rg }}">
+                  <span class="required">*</span><label for="rg">RG:</label>
+                  <input name="rg" type="text" class="form-control rg-mask" id="rg" value="{{ cliente.rg }}" required="required">
                 </div>
                 <div class="form-group col-md-1">
-                  <label for="estado_rg">Estado:</label>
-                  <input name="estado_rg" type="text" onkeyup="this.value=this.value.toUpperCase();" class="form-control" id="estado_rg" value="{{ cliente.estado }}">
+                  <span class="required">*</span><label for="estado_rg">Estado:</label>
+                  <input name="estado_rg" type="text" onkeyup="this.value=this.value.toUpperCase();" class="form-control" id="estado_rg" value="{{ cliente.estado }}" required="required">
                 </div>
               </div>
               <div class="form-row">
                 <div class="form-group col-md-10">
-                  <label for="rua">Rua:</label>
-                  <input name="rua" type="text" onkeyup="this.value=this.value.toUpperCase();" class= "form-control" id="rua" value="{{ cliente.rua }}">
+                  <span class="required">*</span><label for="rua">Rua:</label>
+                  <input name="rua" type="text" onkeyup="this.value=this.value.toUpperCase();" class= "form-control" id="rua" value="{{ cliente.rua }}" required="required">
                 </div>
                 <div class="form-group col-md-2">
-                  <label for="numero">Numero:</label>
-                  <input name="numero" type="text" class="form-control" id="numero" value="{{ cliente.numero }}">
+                  <span class="required">*</span><label for="numero">Numero:</label>
+                  <input name="numero" type="text" class="form-control" id="numero" value="{{ cliente.numero }}" required="required">
                 </div>
 
               </div>
 
               <div class="form-row">
                 <div class="form-group col-md-6">
-                  <label for="cidade">Cidade:</label>
-                  <input name="cidade" type="text" onkeyup="this.value=this.value.toUpperCase();" class="form-control" id="cidade" value="{{ cliente.cidade }}">
+                  <span class="required">*</span><label for="cidade">Cidade:</label>
+                  <input name="cidade" type="text" onkeyup="this.value=this.value.toUpperCase();" class="form-control" id="cidade" value="{{ cliente.cidade }}" required="required">
                 </div>
 
                 <div class="form-group col-md-4">
-                  <label for="estado">Estado:</label>
-                  <input name="estado" type="text" class="form-control" id="estado" value="{{ cliente.estado }}">
+                  <span class="required">*</span><label for="estado">Estado:</label>
+                  <input name="estado" type="text" class="form-control" id="estado" value="{{ cliente.estado }}" required="required" maxlength="2">
                 </div>
 
                 <div class="form-group col-md-2">
-                  <label for="cep">CEP:</label>
-                  <input name="cep" type="text" class="form-control cep-mask" id="cep" value="{{ cliente.cep }}">
+                  <span class="required">*</span><label for="cep">CEP:</label>
+                  <input name="cep" type="text" class="form-control cep-mask" id="cep" value="{{ cliente.cep }}" required="required">
                 </div>
               </div>
 

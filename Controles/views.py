@@ -61,6 +61,7 @@ def editar_veiculos(request):
 def editar_clientes(request):
     clientes = Cliente.objects.all()
     return render(request, 'editar_cliente.html', locals())
+
 @login_required(login_url='login')
 def editando_veiculo(request, id):
     veiculo = Veiculo.objects.get(id=id)
@@ -78,6 +79,7 @@ def editando_cliente(request, id):
         form.save()
         return redirect(reverse_lazy('editar_clientes'))
     return render(request, 'listar_cliente.html', locals())
+
 @login_required(login_url='login')
 def lista_veiculo_id(request, id):
     veiculo = Veiculo.objects.get(id=id)
@@ -87,6 +89,7 @@ def lista_veiculo_id(request, id):
 def lista_cliente_id(request, id):
     cliente = Cliente.objects.get(id=id)
     return render(request, 'listar_cliente.html', locals())
+
 @login_required(login_url='login')
 def alugando_veiculo(request, id, id_cliente):
     veiculo = Veiculo.objects.get(id=id)
@@ -94,6 +97,7 @@ def alugando_veiculo(request, id, id_cliente):
     request.session['cpf_cliente'] = id_cliente
 
     return render(request, 'alugando_veiculo.html', locals())
+
 @login_required(login_url='login')
 def buscando_cliente(request, id_veiculo, id_cliente):
     clientes = Cliente.objects.all()
@@ -120,16 +124,19 @@ def buscando_cliente(request, id_veiculo, id_cliente):
             carro.save()
             return redirect(reverse_lazy('index'))
     return render(request, 'buscando_cliente.html', locals())
+
 @login_required(login_url='login')
 def buscando_cliente_aluguel(request, id_veiculo, id_cliente):
     clientes = Cliente.objects.get(cpf=id_cliente)
     veiculo = Veiculo.objects.get(id=id_veiculo)
     request.session['cpf_cliente'] = id_cliente
     return render(request, 'buscando_cliente_aluguel.html', locals())
+
 @login_required(login_url='login')
 def alugados(request):
     alugados = Aluguel.objects.filter(status=1)
     return render(request, 'alugados.html', locals())
+
 @login_required(login_url='login')
 def historico(request):
     historico = Aluguel.objects.filter(status=0)
