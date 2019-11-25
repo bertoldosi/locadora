@@ -10,6 +10,7 @@ from django.urls import reverse_lazy
 from Controles.forms import *
 from .models import *
 
+@login_required(login_url='/login')
 def index(request):
     veiculos = Veiculo.objects.all()
     return render(request, 'index.html', locals())
