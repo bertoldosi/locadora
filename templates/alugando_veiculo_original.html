@@ -1,0 +1,92 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block titulo %} Tabela {% endblock %}
+
+
+{% block conteudo %}
+
+<div class="card mb-3" >
+          <div class="card-header">
+            <i class="fas fa-table"></i>
+            Cadastro
+          </div>
+        <div class="bordar">
+          <form method="post">
+           {% csrf_token %}
+              <div class="form-row">
+                <div class="form-group col-md-6">
+                  <label for="inputEmail4">Marca:</label>
+                  <h5>{{ veiculo.marca }}</h5><hr>
+                </div>
+
+                <div class="form-group col-md-6">
+                  <label for="inputPassword4">Modelo:</label>
+                  <h5>{{ veiculo.modelo }}</h5><hr>
+                </div>
+              </div>
+
+
+              <div class="form-row">
+                <div class="form-group col-md-6">
+                  <label for="inputEmail4">Renavam:</label>
+                  <h5>{{ veiculo.renavam }}</h5><hr>
+                </div>
+                <div class="form-group col-md-6">
+                  <label for="inputPassword4">Placa:</label>
+                  <h5>{{ veiculo.placa }}</h5><hr>
+                </div>
+
+              </div>
+              <div class="form-row">
+                <div class="form-group col-md-5">
+                  <label for="inputEmail4">Chassi:</label>
+                  <h5>{{ veiculo.numero_chassis }}</h5><hr>
+                </div>
+                <div class="form-group col-md-3">
+                  <label for="inputPassword4">Ano Fab:</label>
+                  <h5>{{ veiculo.ano_fabricacao }}</h5><hr>
+                </div>
+                <div class="form-group col-md-4">
+                  <label for="inputPassword4">Cor:</label>
+                  <h5>{{ veiculo.cor }}</h5><hr>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group col-md-5">
+                  <label for="inputEmail4">Cidade:</label>
+                  <h5>{{ veiculo.cidade }}</h5><hr>
+                </div>
+                <div class="form-group col-md-3">
+                  <label for="inputPassword4">Estado:</label>
+                  <h5>{{ veiculo.estado }}</h5><hr>
+                </div>
+                <div class="form-group col-md-4">
+                  <label for="valor_diaria">Diária:</label>
+                  <h5>{{ veiculo.valor_diaria }}</h5><hr>
+                </div>
+
+                  <div class="form-group col-md-6">
+                  <label for="inputPassword4">Cliente:</label>
+                  <h5>{{ cliente.nome }}</h5><hr>
+                </div>
+                <div class="form-group col-md-6">
+                  <label for="valor_diaria">CPF:</label>
+                  <h5>{{ cliente.cpf }}</h5><hr>
+                </div>
+
+
+                <div class="form-group col-md-4">
+                  <label for="cliente">Pesquisar cliente:</label>
+                  <input name="campo_buscar" type="text"  class="form-control" id="cliente">
+                </div>
+              </div>
+
+              <button type="submit" class="btn btn-primary">Buscar</button>
+          </form>
+        </div>
+        <div class="card-footer small text-muted">Atualizado ontem às 11:59 PM</div>
+</div>
+
+{% endblock %}

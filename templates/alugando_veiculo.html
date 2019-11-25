@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block titulo %} Tabela {% endblock %}
+
+
+{% block conteudo %}
+
+<div class="card mb-3"  >
+        <div class="bordar" style="height: 100%;">
+            <h5 style="text-align: center">Veiculo</h5>
+            <div class="borda-maior">
+
+                <div class="bordar-veiculo">
+                  <div class="form-row">
+                    <div class="form-group col-md-6">
+                      <label for="marca">Marca:</label>
+                      <h6>{{ veiculo.marca }}</h6><hr>
+                    </div>
+
+                    <div class="form-group col-md-6">
+                      <label for="modelo">Modelo:</label>
+                      <h6>{{ veiculo.modelo }}</h6><hr>
+                    </div>
+                  </div>
+
+
+                  <div class="form-row">
+                    <div class="form-group col-md-6">
+                      <label for="renavam_aluguel">Renavam:</label>
+                        <h6>{{ veiculo.renavam }}</h6><hr>
+                    </div>
+
+                    <div class="form-group col-md-6">
+                      <label for="placa">Placa:</label>
+                      <h6>{{ veiculo.placa }}</h6><hr>
+                    </div>
+                  </div>
+                </div>
+            </div><br>
+            <br>
+            <h5 style="text-align: center">Cliente</h5>
+            <div class="card mb-3" style="height: 100%;">
+              <div class="card-body">
+                <div class="table-responsive">
+                  <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <thead>
+                      <tr style="text-align: center">
+                        <th>Nome</th>
+                        <th>CPF</th>
+                        <th>Ação</th>
+                      </tr>
+                    </thead>
+
+                    <tbody>
+
+                    {% for i in clientes %}
+                      <tr style="text-align: center">
+                        <td><a>{{ i.nome }}</a></td>
+                        <td>{{ i.cpf }}</td>
+                        <td><a href="{% url 'buscando_cliente' id_veiculo=veiculo.id id_cliente=i.id %}" class="btn btn-primary" role="button" aria-pressed="true">Escolher</a></td>
+                      </tr>
+                    {% endfor %}
+
+                    </tbody>
+                  </table><br>
+                </div>
+              </div>
+            </div>
+        </div>
+
+{% endblock %}

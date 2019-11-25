@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block titulo %} Tabela {% endblock %}
+
+
+{% block conteudo %}
+
+<div class="card mb-3" style="height: 100%;">
+          <div class="card-body">
+            <div class="table-responsive">
+              <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                  <tr style="text-align: center">
+                    <th>Cliente</th>
+                    <th>Veiculo</th>
+                    <th>Data do aluguel</th>
+                    <th>Data para entrega</th>
+                    <th>Valor da diária</th>
+                    <th>Ações</th>
+                  </tr>
+                </thead>
+                <tbody style="text-align: center">
+
+                {% for i in alugados %}
+                  {% if i.veiculo.status_aluguel == '1' %}
+                      <tr>
+                        <td><a >{{ i.cliente }}</a></td>
+                        <td><a >{{ i.veiculo }}</a></td>
+                        <td>{{ i.dt_aluguel }}</td>
+                        <td>{{ i.dt_prazo }}</td>
+                        <td>R$ {{ i.veiculo.valor_diaria }}</td>
+                        <td><a href="{% url 'devolucao' id_veiculo=i.veiculo.id id_aluguel=i.id %}" class="btn btn-primary" role="button" aria-pressed="true">Devolver</a></td>
+                      </tr>
+                  {% endif %}
+                {% endfor %}
+
+                </tbody>
+              </table><br>
+            </div>
+          </div>
+
+</div>
+
+{% endblock %}

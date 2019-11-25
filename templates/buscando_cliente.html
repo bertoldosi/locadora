@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block titulo %} Tabela {% endblock %}
+
+
+{% block conteudo %}
+
+<div class="card mb-3" style="height: 100%;" >
+
+        <div class="bordar">
+            <div class="borda-maior">
+                <div class="bordar-veiculo">
+                  <form  method="post">
+                   {% csrf_token %}
+                      <div class="form-row">
+                        <div class="form-group col-md-6">
+                          <input name="valor_aluguel" type="hidden" class="form-control" id="valor_aluguel" value="{{ veiculo.valor_diaria }}">
+                        </div>
+                      </div>
+
+                      <div class="form-row">
+        {#                <div class="form-group col-md-3">#}
+        {#                  <label for="dt_aluguel">Data do aluguel:</label>#}
+        {#                  <input name="dt_aluguel" type="date" class="form-control" id="dt_aluguel">#}
+        {#                </div>#}
+                        <div class="form-group col-md-6">
+                          <label for="dt_prazo">Prazo de entrega:</label>
+                          <input name="dt_prazo" type="date" class="form-control" id="dt_prazo">
+                        </div>
+                        <div class="form-group col-md-6">
+                          <label for="km_saida">Km de saída:</label>
+                          <input name="km_saida" type="text" class="form-control" id="km_saida" placeholder="Quilometragem do veículo">
+                        </div>
+                      </div><br>
+
+                      <button type="submit" class="btn btn-primary centro">Resevar</button>
+                  </form>
+                </div>
+            </div>
+        </div>
+</div>
+
+
+{% endblock %}

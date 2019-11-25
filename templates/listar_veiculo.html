@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block titulo %} Editar||Veículo {% endblock %}
+
+
+{% block conteudo %}
+
+<div class="card mb-3" style="height: 100%;">
+        <div class="bordar">
+          <form method="post">
+           {% csrf_token %}
+              <div class="form-row">
+                <div class="form-group col-md-6">
+                  <label for="inputEmail4">Marca:</label>
+                  <input name="marca" type="text" onkeyup="this.value=this.value.toUpperCase();" class="form-control" id="inputEmail4" value="{{ veiculo.marca }}">
+                </div>
+
+                <div class="form-group col-md-6">
+                  <label for="inputPassword4">Modelo:</label>
+                  <input name="modelo" type="text" onkeyup="this.value=this.value.toUpperCase();" class="form-control" id="inputPassword4" value="{{ veiculo.modelo }}">
+                </div>
+              </div>
+
+
+              <div class="form-row">
+                <div class="form-group col-md-6">
+                  <label for="inputEmail4">Renavam:</label>
+                  <input name="renavam" type="text" onkeyup="this.value=this.value.toUpperCase();" class="form-control renavam-mask" id="inputEmail4" value="{{ veiculo.renavam }}">
+                </div>
+                <div class="form-group col-md-6">
+                  <label for="inputPassword4">Placa:</label>
+                  <input name="placa" type="text" onkeyup="this.value=this.value.toUpperCase();" class="form-control placa-mask" id="inputPassword4" value="{{ veiculo.placa }}">
+                </div>
+
+              </div>
+              <div class="form-row">
+                <div class="form-group col-md-5">
+                  <label for="inputEmail4">Chassi:</label>
+                  <input name="numero_chassis" type="text" onkeyup="this.value=this.value.toUpperCase();" class="form-control " maxlength="17" id="inputEmail4" value="{{ veiculo.numero_chassis }}">
+                </div>
+                <div class="form-group col-md-3">
+                  <label for="inputPassword4">Ano Fab:</label>
+                  <input name="ano_fabricacao" type="text" onkeyup="this.value=this.value.toUpperCase();" class="form-control" id="inputPassword4" value="{{ veiculo.ano_fabricacao }}">
+                </div>
+                <div class="form-group col-md-4">
+                  <label for="inputPassword4">Cor:</label>
+                  <input name="cor" type="text" onkeyup="this.value=this.value.toUpperCase();" class="form-control" id="inputPassword4" value="{{ veiculo.cor }}">
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group col-md-5">
+                  <label for="inputEmail4">Cidade:</label>
+                  <input name="cidade" type="text" onkeyup="this.value=this.value.toUpperCase();" class="form-control" id="inputEmail4" value="{{ veiculo.cidade }}">
+                </div>
+                <div class="form-group col-md-3">
+                  <label for="inputPassword4">Estado:</label>
+                  <input name="estado" type="text" onkeyup="this.value=this.value.toUpperCase();" class="form-control" id="inputPassword4" value="{{ veiculo.estado }}">
+                </div>
+                <div class="form-group col-md-4">
+                  <label for="valor_diaria">Diária:</label>
+                  <input name="valor_diaria" type="text" onkeyup="this.value=this.value.toUpperCase();" class="form-control" id="valor_diaria" value="{{ veiculo.valor_diaria }}">
+                </div>
+                <div class="form-group col-md-4">
+                      <input name="status_aluguel" type="hidden"  class="form-control" id="status_aluguel" value="{{ veiculo.status_aluguel }}">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <div class="form-check">
+                </div>
+              </div>
+              <button type="submit" class="btn btn-primary">Alterar</button>
+              <a href="{% url 'editar_veiculos' %}" class="btn btn-primary" role="button" aria-pressed="true">Voltar</a>
+          </form>
+        </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block titulo %} Lista||Veículos {% endblock %}
+
+
+{% block conteudo %}
+
+<div class="card mb-3" style="height: 100%;">
+          <div class="card-body">
+            <div class="table-responsive">
+              <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                  <tr style="text-align: center">
+                    <th>Cliente</th>
+                    <th>Veiculo</th>
+                    <th>Data aluguel</th>
+                    <th>Data prazo</th>
+                    <th>Km entrega</th>
+                    <th>Valor da Diária</th>
+                    <th>Despesa</th>
+                  </tr>
+                </thead>
+
+                <tbody>
+
+                {% for i in historico %}
+                  <tr style="text-align: center">
+                    <td>{{ i.cliente }}</td>
+                    <td>{{ i.veiculo }}</td>
+                    <td>{{ i.dt_aluguel }}</td>
+                    <td>{{ i.dt_prazo }}</td>
+                    <td>{{ i.km_devolucao }}</td>
+                    <td>{{ i.valor_aluguel }}</td>
+                    <td>{{ i.valor_total_aluguel }}</td>
+                  </tr>
+                {% endfor %}
+
+                </tbody>
+              </table><br>
+            </div>
+          </div>
+</div>
+
+{% endblock %}

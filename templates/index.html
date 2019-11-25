@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block titulo %} Locadora - Disponíveis {% endblock %}
+
+
+{% block conteudo %}
+
+<div class="card mb-3" style="height: 100%;">
+          <div class="card-body">
+            <div class="table-responsive">
+              <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                  <tr style="text-align: center">
+                    <th>Marca</th>
+                    <th>Modelo</th>
+                    <th>Placa</th>
+                    <th>Diária</th>
+                    <th>Ações</th>
+                  </tr>
+                </thead>
+                <tbody style="text-align: center">
+
+                {% for i in veiculos %}
+                  {% if i.status_aluguel == '0' %}
+                      <tr>
+                        <td><a >{{ i.marca }}</a></td>
+                        <td>{{ i.modelo }}</td>
+                        <td>{{ i.placa }}</td>
+                        <td>R$ {{ i.valor_diaria }}</td>
+                        <td><a href="{% url 'alugando_veiculo' id=i.id id_cliente=0 %}" class="btn btn-primary" role="button" aria-pressed="true">Alugar</a></td>
+                      </tr>
+                  {% endif %}
+                {% endfor %}
+
+                </tbody>
+              </table><br>
+            </div>
+          </div>
+
+</div>
+
+{% endblock %}

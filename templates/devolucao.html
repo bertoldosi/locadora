@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block titulo %} Tabela {% endblock %}
+
+
+{% block conteudo %}
+
+<div class="card mb-3" style="height: 100%;" >
+
+        <div class="bordar">
+          <form  method="post">
+           {% csrf_token %}
+                      <div class="form-row">
+                                <div class="form-group col-md-6">
+                                  <input name="dt_devolucao" type="hidden" class="form-control" id="dt_devolucao" value="{{ aluguel.dt_devolucao }}">
+                                </div>
+                                <div class="form-group col-md-6">
+                                  <input name="qtd_dias" type="hidden" class="form-control" id="qtd_dias" value="{{ dias }}">
+                                </div>
+                                <div class="form-group col-md-6">
+                                  <input name="valor_total_aluguel" type="hidden" class="form-control" id="valor_total_aluguel" value="{{ aluguel.valor_total_aluguel }}">
+                                </div>
+                      </div>
+                    <div class="borda-maior">
+                        <div class="bordar-veiculo">
+                          <div class="form-row">
+                            <div class="form-group col-md-6">
+                              <label for="km_devolucao">Qtd dias:</label>
+                              <h3 style="font-family: 'Ubuntu Mono'">{{ dias }}</h3><hr>
+                            </div>
+                            <div class="form-group col-md-6">
+                              <label for="km_saida">Diária:</label>
+                              <h3 style="font-family: 'Ubuntu Mono'">R$: {{ aluguel.valor_aluguel }}</h3><hr>
+                            </div>
+                          </div><br>
+
+                          <div class="form-row">
+                            <div class="form-group col-md-3">
+                              <label for="km_saida">Valor total:</label>
+                              <h3 style="font-family: 'Ubuntu Mono'">R$: {{ valor_total }}</h3><hr>
+                            </div>
+                          </div><br>
+
+                          <div class="form-row">
+                            <div class="form-group col-md-6">
+                              <label for="km_devolucao">km de devolução:</label>
+                              <input name="km_devolucao" type="number" class="form-control" id="km_devolucao" placeholder="Quilometragem do veículo">
+                            </div>
+                          </div><br><br>
+                            <button type="submit" class="btn btn-primary">Devolver</button>
+                        </div>
+                    </div>
+          </form>
+        </div>
+</div>
+
+
+{% endblock %}
