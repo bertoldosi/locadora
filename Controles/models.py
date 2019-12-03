@@ -37,13 +37,13 @@ class Veiculo(models.Model):
 class Aluguel(models.Model):
     dt_aluguel = models.DateField('Data do aluguel')
     dt_prazo = models.DateField('Prazo')
-    dt_devolucao = models.DateField('Data da devolução')
+    dt_devolucao = models.DateField('Data da devolução', blank=True, null=True)
     valor_aluguel = models.IntegerField('Valor do aluguel')
     km_saida = models.IntegerField('Km de saida')
-    km_devolucao = models.IntegerField('Km de devolução')
+    km_devolucao = models.IntegerField('Km de devolução', blank=True, null=True)
     status = models.IntegerField(default=1)
-    qtd_dias = models.IntegerField()
-    valor_total_aluguel = models.IntegerField()
+    qtd_dias = models.IntegerField(blank=True, null=True)
+    valor_total_aluguel = models.IntegerField(blank=True, null=True)
     cliente = models.ForeignKey(Cliente, on_delete=models.CASCADE)
     veiculo = models.ForeignKey(Veiculo, on_delete=models.CASCADE)
 
