@@ -4,10 +4,10 @@
 
 ## Principais funcionalidades
 
-Realizar cadastro de veiculos
-Realizar cadastro de clietes
-Realizar reservas de veiculos
-Consultar veiculos reservados
+- Realizar cadastro de veiculos
+- Realizar cadastro de clietes
+- Realizar reservas de veiculos
+- Consultar veiculos reservados
 
 
 
